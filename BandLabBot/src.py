@@ -1,18 +1,22 @@
+from States.data import next_post6,next_post7, next_post8, like_btn10_xpath
+from States.data import like_btn6_xpath, like_btn7_xpath, like_btn9_xpath
 from States.data import gecko_driver_path, url, user, passwd, login_url
 from selenium.common.exceptions import ElementNotInteractableException
 from States.data import login_xpath, username_xpath, password_xpath
+from States.data import like_btn2_xpath, next_post, like_btn5_xpath
 from selenium.webdriver.support import expected_conditions as EC 
-from States.data import popup_btn, like_btn_classname, login_btn
+from States.data import like_btn4_xpath, next_post4, next_post5
 from selenium.webdriver.support.ui import WebDriverWait as WDW 
+from States.data import next_post2, like_btn_xpath, next_post3
+from States.data import popup_btn, login_btn, like_btn3_xpath
+from States.data import next_post9,next_post10, like_btn8_xpath
 from selenium.common.exceptions import NoSuchElementException
 from urllib.error import HTTPError as PageNotFoundError
-from States.data import like_btn_css, like_btn_xpath
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium import webdriver as web
-from States.data import comment_classname
 from time import sleep
 import os
+# Each selenium bot .py file is a microservice
 
 class Driver:
     def __init__(self):
@@ -123,32 +127,301 @@ class Driver:
                 return 
 
     def feed_interaction(self):
-        # This is the function that needs to be addressed
-        sleep(1)
+# 1 
+##########################################################################################################
         try:
-            WDW(
-                self.driver,10).until(
+            like_button = WDW(
+                self.driver, 10).until(
                     EC.presence_of_element_located((
-                        By.CSS_SELECTOR,
-                    comment_css
+                        By.XPATH, 
+                    like_btn_xpath
                 )))
+            if like_button.is_displayed() and like_button.is_enabled():
+                like_button.click()
+                print("Post liked")
+            else:
+                print("Like button not clickable")
         except ElementNotInteractableException as err:
             print(err)
-        sleep(1)
-        self.driver.find_element(
-            By.CSS_SELECTOR,
-                comment_css).click()
-        sleep(1)
-        print("comment sent")
-        # This like bot would work if all of the id's were the same or if all of the classnames were the same.
-        # Find which locator connects all of the like buttons on the page. (If any)
-        # Check if the like button is already clicked and skip that one. Write the exception. 
-        # Class_Name should have worked. But it hasn't so far. (Using the beginning of the full class name. Not the full classname)
-        sleep(1)
-        self.driver.execute_script(
-        "window.scrollBy(0, 750);")
-        print('scroll-2')
-        # Scroll Down by 750 pixels
+
+        try:
+            next_post_button = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post
+                        )))
+            if next_post_button.is_displayed() and next_post_button.is_enabled():
+                next_post_button.click()
+                print("Next post clicked")
+                #self.driver.execute_script("window.scrollBy(0, 750);")
+                #print('Scrolled down by 750 pixels')
+            else:
+                print("Next post button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 2       
+##########################################################################################################
+        try:
+            like_button_two = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn2_xpath
+                )))
+            if like_button_two.is_displayed() and like_button_two.is_enabled():
+                like_button_two.click()
+                print("Post liked 2")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button2 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post2
+                        )))
+            if next_post_button2.is_displayed() and next_post_button2.is_enabled():
+                next_post_button2.click()
+                print("Next post 2 clicked")
+                #self.driver.execute_script("window.scrollBy(0, 750);")
+                #print('Scrolled down by 750 pixels')
+            else:
+                print("Next post 2 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 3
+##########################################################################################################################################
+        try:
+            like_button_three = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn3_xpath
+                )))
+            if like_button_three.is_displayed() and like_button_three.is_enabled():
+                like_button_three.click()
+                print("Post liked 3")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button3 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post3
+                        )))
+            if next_post_button3.is_displayed() and next_post_button3.is_enabled():
+                next_post_button3.click()
+                print("Next post 3 clicked")
+            else:
+                print("Next post3 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 4
+##########################################################################################################################################
+        try:
+            like_button_four = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn4_xpath
+                )))
+            if like_button_four.is_displayed() and like_button_four.is_enabled():
+                like_button_four.click()
+                print("Post liked 4")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button4 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post4
+                        )))
+            if next_post_button4.is_displayed() and next_post_button4.is_enabled():
+                next_post_button4.click()
+                print("Next post4 clicked")
+            else:
+                print("Next post 4 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 5
+##########################################################################################################################################
+        try:
+            like_button_five = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn5_xpath
+                )))
+            if like_button_five.is_displayed() and like_button_five.is_enabled():
+                like_button_five.click()
+                print("Post liked 5")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button5 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post5
+                        )))
+            if next_post_button5.is_displayed() and next_post_button5.is_enabled():
+                next_post_button5.click()
+                print("Next post 5 clicked")
+            else:
+                print("Next post 5 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 6
+##########################################################################################################################################
+        try:
+            like_button_six = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn6_xpath
+                )))
+            if like_button_six.is_displayed() and like_button_six.is_enabled():
+                like_button_six.click()
+                print("Post liked 6")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button6 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post6
+                        )))
+            if next_post_button6.is_displayed() and next_post_button6.is_enabled():
+                next_post_button6.click()
+                print("Next post 6 clicked")
+            else:
+                print("Next post 6 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 7
+##########################################################################################################################################
+        try:
+            like_button_seven = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn7_xpath
+                )))
+            if like_button_seven.is_displayed() and like_button_seven.is_enabled():
+                like_button_seven.click()
+                print("Post liked 7")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button7 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post7
+                        )))
+            if next_post_button7.is_displayed() and next_post_button7.is_enabled():
+                next_post_button7.click()
+                print("Next post 7 clicked")
+            else:
+                print("Next post 7 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 8
+##########################################################################################################################################
+        try:
+            like_button_eight = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn8_xpath
+                )))
+            if like_button_eight.is_displayed() and like_button_eight.is_enabled():
+                like_button_eight.click()
+                print("Post liked 8")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button8 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post8
+                        )))
+            if next_post_button8.is_displayed() and next_post_button8.is_enabled():
+                next_post_button8.click()
+                print("Next post 8 clicked")
+            else:
+                print("Next post 8 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 9
+##########################################################################################################################################
+        try:
+            like_button_nine = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn9_xpath
+                )))
+            if like_button_nine.is_displayed() and like_button_nine.is_enabled():
+                like_button_nine.click()
+                print("Post liked 9")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button9 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post9
+                        )))
+            if next_post_button9.is_displayed() and next_post_button9.is_enabled():
+                next_post_button9.click()
+                print("Next post 9 clicked")
+            else:
+                print("Next post 9 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+# 10
+##########################################################################################################################################
+        try:
+            like_button_ten = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, 
+                    like_btn10_xpath
+                )))
+            if like_button_ten.is_displayed() and like_button_ten.is_enabled():
+                like_button_ten.click()
+                print("Post liked 10")
+            else:
+                print("Like button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
+        try:
+            next_post_button10 = WDW(
+                self.driver, 10).until(
+                    EC.presence_of_element_located((
+                        By.XPATH, next_post10
+                        )))
+            if next_post_button10.is_displayed() and next_post_button10.is_enabled():
+                next_post_button10.click()
+                print("Next post 10 clicked")
+            else:
+                print("Next post 10 button not clickable")
+        except ElementNotInteractableException as err:
+            print(err)
 
     def close_browser(self):
         self.driver.close()

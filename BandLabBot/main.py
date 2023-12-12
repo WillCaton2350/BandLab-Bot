@@ -1,4 +1,5 @@
 from States.data import gecko_driver_path, url, user, passwd, login_url
+from selenium.common.exceptions import ElementNotInteractableException
 from States.data import login_xpath, username_xpath, password_xpath
 from selenium.webdriver.support import expected_conditions as EC 
 from States.data import popup_btn, like_btn_classname, login_btn
@@ -7,7 +8,9 @@ from selenium.common.exceptions import NoSuchElementException
 from urllib.error import HTTPError as PageNotFoundError
 from States.data import like_btn_css, like_btn_xpath
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium import webdriver as web
+from States.data import comment_classname
 from time import sleep
 import os
 
@@ -121,21 +124,30 @@ class webDriver:
 
     def feed_interaction(self):
         # This is the function that needs to be addressed
+        self.driver.execute_script(
+        "window.scrollBy(0, 10);")
+        print('scroll-1')
+        # Scroll Down by 10 pixels
         sleep(1)
         try:
             WDW(
                 self.driver,10).until(
                     EC.presence_of_element_located((
-                        By.CSS_SELECTOR,
-                    like_btn_css
+                        By.CLASS_NAME,
+                    comment_classname
                 )))
-        except NoSuchElementException as err:
+        except ElementNotInteractableException as err:
             print(err)
         sleep(1)
         self.driver.find_element(
-            By.CSS_SELECTOR,
-                like_btn_css).click()
-        print("like btn clicked")
+            By.CLASS_NAME,
+                comment_classname).send_keys("Dope!!")
+        sleep(1)
+        self.driver.find_element(
+            By.CLASS_NAME,
+                comment_classname).send_keys(Keys.ENTER)
+        sleep(2)
+        print("comment sent")
         # This like bot would work if all of the id's were the same or if all of the classnames were the same.
         # Find which locator connects all of the like buttons on the page. (If any)
         # Check if the like button is already clicked and skip that one. Write the exception. 
@@ -143,6 +155,7 @@ class webDriver:
         sleep(1)
         self.driver.execute_script(
         "window.scrollBy(0, 750);")
+        print('scroll-2')
         # Scroll Down by 750 pixels
 
     def close_browser(self):
