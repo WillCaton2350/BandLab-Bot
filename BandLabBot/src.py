@@ -129,15 +129,15 @@ class Driver:
             WDW(
                 self.driver,10).until(
                     EC.presence_of_element_located((
-                        By.XPATH,
-                    like_btn_xpath
+                        By.CSS_SELECTOR,
+                    comment_css
                 )))
         except ElementNotInteractableException as err:
             print(err)
         sleep(1)
         self.driver.find_element(
-            By.XPATH,
-                like_btn_xpath).click()
+            By.CSS_SELECTOR,
+                comment_css).click()
         sleep(1)
         print("comment sent")
         # This like bot would work if all of the id's were the same or if all of the classnames were the same.
