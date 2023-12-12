@@ -33,8 +33,8 @@ next_post10 = '/html/body/main/div/section/div[2]/div[2]/div[3]/div/div[11]/post
 
 
 # LOGIN CREDENTIALS
-user = "soundsbydigitaljames@gmail.com"
-passwd = "Comm@nd7890"
+user = "00000-000000-000000"
+passwd = "0000000-0000000-0000000"
 
 # CLASSNAME
 comment_classname = 'comment-textarea'
