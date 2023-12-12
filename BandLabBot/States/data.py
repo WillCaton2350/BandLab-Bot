@@ -12,8 +12,8 @@ username_xpath = '//*[@id="username"]'
 password_xpath = '//*[@id="password"]'
 
 # LOGIN CREDENTIALS
-user = "soundsbydigitaljames@gmail.com"
-passwd = "Comm@nd7890"
+user = "0000000-000000"
+passwd = "00000-000000000"
 
 # BUTTONS
 login_btn = '/html/body/main/div/div/div/div/div/section/form/div[4]/button'
