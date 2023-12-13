@@ -1,12 +1,9 @@
-from main import webDriver
+from Bot.component import Driver
 
-func = webDriver()
-counter = 10
+func = Driver()
 func.start_driver()
 func.start_browser()
 func.login()
-func.popup_interaction()
-for i in range(counter):
-    func.feed_interaction()
-    counter+=1
+#func.popup_interaction()
+func.feed_interaction()
 func.close_browser()
