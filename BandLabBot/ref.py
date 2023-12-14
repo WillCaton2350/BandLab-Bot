@@ -1,8 +1,9 @@
-from Bot.rehash import web_driver
-# REPOST BOT
+from Bot.reference import Driver
+# UNFOLLOW BOT
+# Isn't Not working yet. Work in progress
 
 if __name__ == "__main__":
-    func = web_driver()
+    func = Driver()
     func.start_driver()
     func.start_browser()
     func.login()

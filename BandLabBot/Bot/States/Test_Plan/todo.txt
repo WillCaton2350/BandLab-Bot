@@ -1,0 +1,40 @@
+{UPCOMMING}
+
+Bot Features:
+- Repost
+- Follow 
+- Unfollow
+- Like 
+- Comment 
+
+
+{$Issues}
+- Each selenium bot .py file is a microservice
+ + (More like a modular monolithic approach)
+
+- Still not handling the popup interaction if the popup element isn't showing on the screen.
+ + Address / change project structure and file names.
+ + (For you) feed separate folder from (original following feed).
+ + For you and following page for the like and comment bot. 
+  * (The Follow account bot works within a single/separate tab and is not tied to the follwing feed or the for you page feed)
+
+{Increase Counter}
+ + Increase the follow account feature past 4
+ + Increase the like post feature past 10
+ + Increase the comment on post feature past 10
+ + Increase the unfollow account feature past 7
+ + Increase the repost feature past 1
+
+Bot file naming convention order:
+ - Component = like bot 
+ - Accounts = follow bot 
+ - Rehash = repost bot 
+ - Service = comment bot 
+
+- The unfollow bot is giving me issues. 
+ Firefox webdriver cannot locate the 
+ 'following' a tag with the click() function.
+ + Fixed. Now unfollows 7 accounts at a time
+
+The DM Bot works but I am getting an invalid chat error message on the client side. 
+ - (So this is an issue with bandlab not with my python selenium bot.)

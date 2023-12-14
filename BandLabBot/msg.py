@@ -1,5 +1,6 @@
-from Bot.rehash import web_driver
-# REPOST BOT
+from Bot.message import web_driver
+# DM BOT
+
 
 if __name__ == "__main__":
     func = web_driver()

@@ -1,4 +1,4 @@
-from Bot.rehash import web_driver
+from Bot.Feed.repost_bot import web_driver
 # REPOST BOT
 
 if __name__ == "__main__":

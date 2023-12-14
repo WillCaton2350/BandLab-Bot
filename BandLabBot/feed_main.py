@@ -1,8 +1,8 @@
-from Bot.rehash import web_driver
-# REPOST BOT
+from Bot.Feed.comment_bot import webDriver
+# COMMENT BOT
 
 if __name__ == "__main__":
-    func = web_driver()
+    func = webDriver()
     func.start_driver()
     func.start_browser()
     func.login()
