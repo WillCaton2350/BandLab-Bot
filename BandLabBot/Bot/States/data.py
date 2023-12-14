@@ -52,8 +52,8 @@ direct_msg_xpath = '/html/body/main/div[1]/div/ul/li[3]/a'
 msg_text_xpath = '/html/body/div[6]/aside/div/div[2]/share-as-message/form/div[2]/div[1]/textarea'
 
 # LOGIN CREDENTIALS
-user = "soundsbydigitaljames@gmail.com"
-passwd = "Comm@nd7890"
+user = "xxxx-xxxxx-xxxxx-xxxx"
+passwd = "00000-00000-00000"
 
 # CLASSNAMES
 comment_classname = 'comment-textarea'
