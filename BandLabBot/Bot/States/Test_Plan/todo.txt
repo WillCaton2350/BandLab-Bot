@@ -1,0 +1,114 @@
+{UPCOMMING}
+
+Bot Features:
+
+- Repost
+- Follow 
+- Unfollow
+- Like
+- Comment 
+
+ + For you feed interactions 
+ + Following feed interactions
+
+{$Issues}
+- Each selenium bot .py file is a microservice
+ + (More like a modular monolithic approach)
+
+- Still not handling the popup interaction if the popup element isn't showing on the screen.
+ + Address / change project structure and file names.
+ + (For you) feed separate folder from (original following feed).
+ + For you and following page for the like and comment bot. 
+  * (The Follow account bot works within a single/separate tab and is not tied to the following feed or the for you page feed)
+  * The For you feature finally worked on the dm bot (Feed msg_bot works)
+  + I also need for this bot to avoid 
+      - account suspensions. 
+      - rate limiting
+      - write in the terms and conditions that (If your account is suspended or terminated, our company is not liable)
+   + Now both bots fail at the same point. (msg_bot.py & message.py) The username_select function / logic is not working.
+
+
+{Increase Counter}
+ + Increase the follow account feature past 4
+ + Increase the like post feature past 10
+ + Increase the comment on post feature past 10
+ + Increase the unfollow account feature past 7
+ + Increase the repost feature past 1
+
+Bot file naming convention order:
+ - likeBot = like bot 
+ - accountBot = follow bot 
+ - unfollowBot = unfollow bot 
+ - repostBot = repost bot 
+ - commentBot = comment bot 
+
+- The unfollow bot is giving me issues. 
+ Firefox webdriver cannot locate the 
+ 'following' a tag with the click() function.
+ + Fixed. Now unfollows 7 accounts at a time
+
+The DM Bot works but I am getting an invalid chat error message on the client side. 
+ - (So this is an issue with bandlab not with my python selenium bot.)
+ - The feed_message.py file and msg_bot works but the...
+  + (invalid chat message still appears after clicking the send button)
+ - Once this Direct Message Bot is finished I will have a full functioning POC. 
+ - The Direct message shouldnt be one message that is hard coded in to the main...
+    selenium script but show be a list of messages/comments that python can iterate through and choose at random. 
+    (Apply the same logic from the comment bot with comment_opts list)
+    + The DM looper from the data.py file works It's still failing when trying to access the for you page. (Might be a timing issue)
+    + The EPS Order should make sense. The Bot reposts a song then dm's them about that song. Then the like and comment on 10 posts 
+        in a row on the following feed. Then Like and Comment on 10 posts on the for you feed. Then Proceed to Follow 4 accounts then unfollow 7 accounts.
+        Wait for an hour to pass and do the same thing. 
+        + Or you could dm the account saying that you are going to repost one of their songs. (Whichever order comes first, they both works)
+
+ {Engagement Point System}
+  + The next steps would be to test the bot for a month and log the pass fail rate on how many times the bot fails when run. 
+  + Then I would need to employ the point system. EX: If I run the bot once every hour. How many engagement points do does the user get back. 
+   * One like on the clients post is a engagement point. 
+   * One like on a comment is an engagement point. 
+   * One comment mention is an engagement point. 
+   * One reply to a comment is an engagement point.
+   * A new follower is an engagement point. 
+   * A new comment on your post is an engagement point.
+   * A new like on your post is an engagement point.
+   * A new repost is an engagement point.
+   * One / a random like on a repost that the bot reposted is an engagement point.
+   * One comment on a repost that the bot reposted is an engagement point.
+   * One DM reply from the bot is an engagement point.
+
+The EPS needs to be:
+Order: 
+ - Reposts 1 post on Following Feed 
+ - Likes 10 posts on Following feed 
+ - Comments on 10 posts on Following feed 
+
+ - Reposts 1 post on ForYou Feed
+ - Likes 10 posts on ForYou Feed 
+ - Comments on 10 posts on ForYou Feed 
+
+ - Follows 4 accounts 
+ - Unfollows 7 accounts
+
+
+{$IDEAS}
+
+Music Marketing Company
+
+BandLab - Engagement Bot
+
+Soundcloud - Autoplay Bot
+
+Put the band lab and Soundcloud bots in separate virtual machines 
+Log into virtual machine on linux. Make an automated pipeline with something like OSA script to automate the opening of VirtualBox, signing in, choosing the correct Ubuntu VM, then activating the script from the linux gnome terminal and repeating the activation of the script on schedule. Something like Jenkins or Docker. Might need to get into Containerization for deployment/semi-deployment?
+Have the instagram bot run on schedule inside of another linux VM and have it run/market the overall company’s instagram page.
+
++ Try to spin up multiple browser instances for each bandlab root.py file the same way the Soundcloud bot does.
+
+Possibly create multiple bandLab accounts and have the username and password function cycle through each account and manage the bot net as each account interacts with specified accounts through on band labs platform.
+
+Both Bandlab and Soundcloud bots can run at the same time.
+
+- The Bot net can up the plays on the the clients song/song. 
+- Create 100 email accounts and band lab accounts.
+- Keep every password the same and cycle through the usernames.
+- Interact with the users song via likes and comments with the bot net and use the autoplay bot to increase the plays the user gets on their song. 
